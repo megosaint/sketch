@@ -48,8 +48,12 @@ function resetGrid(pixels){
     pixels.forEach((pixel) => {
         if (pixel.classList.contains('black') === true){
             pixel.classList.remove('black');
-    }
-});
+        }
+        if (pixel.classList.contains('random') === true){
+            pixel.classList.remove('random');
+            pixel.style.backgroundColor = '';
+        }
+    });
 };
 
 
@@ -65,8 +69,25 @@ function classicHover(pixels){
     pixels.forEach((pixel) => {
         pixel.addEventListener('mouseover', () => {
             if (color === 'black'){
+                if (pixel.classList.contains('random') === true){
+                    pixel.classList.remove('random');
+                    pixel.style.backgroundColor = '';
+                }
                 if (pixel.classList.contains('black') === false){
                     pixel.classList.add('black');
+                }
+            }
+            else if (color === 'random'){
+                if (pixel.classList.contains('black') === true){
+                    pixel.classList.remove('black');
+                }
+                if (pixel.classList.contains('random') === false){
+                    pixel.classList.add('random');
+                    let r = Math.floor(Math.random() * 256);
+                    let g = Math.floor(Math.random() * 256);
+                    let b = Math.floor(Math.random() * 256);
+                    let bgColor = "rgb(" + r + "," + g + "," + b + ")";
+                    pixel.style.backgroundColor = bgColor;
                 }
             }
         });
