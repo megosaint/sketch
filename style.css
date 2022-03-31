@@ -26,6 +26,10 @@ body {
     box-sizing: border-box;
 }
 
-.hov {
+.black {
     background-color: black;
+}
+
+.random {
+    background-color: red;
 }

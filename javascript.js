@@ -1,5 +1,6 @@
 const container = document.querySelector('#container');
 let size = 16;
+let color = 'random';
 createGrid(size);
 let pixels = document.querySelectorAll('.pixel');
 classicHover(pixels);
@@ -8,6 +9,17 @@ const reset = document.querySelector('#reset');
 
 reset.addEventListener('click', () => {
     resetGrid(pixels);
+});
+
+const colorBlack = document.querySelector('#black');
+
+colorBlack.addEventListener('click', () => {
+    color = 'black';
+});
+
+const colorRandom = document.querySelector('#random');
+colorRandom.addEventListener('click', () => {
+    color = 'random';
 });
 
 const newGrid = document.querySelector('#new');
@@ -34,8 +46,8 @@ function createGrid(size) {
 };
 function resetGrid(pixels){
     pixels.forEach((pixel) => {
-        if (pixel.classList.contains('hov') === true){
-            pixel.classList.remove('hov');
+        if (pixel.classList.contains('black') === true){
+            pixel.classList.remove('black');
     }
 });
 };
@@ -52,8 +64,10 @@ function createNewGrid(size){
 function classicHover(pixels){
     pixels.forEach((pixel) => {
         pixel.addEventListener('mouseover', () => {
-            if (pixel.classList.contains('hov') === false){
-                pixel.classList.add('hov');
+            if (color === 'black'){
+                if (pixel.classList.contains('black') === false){
+                    pixel.classList.add('black');
+                }
             }
         });
     });
