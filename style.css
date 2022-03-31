@@ -1,0 +1,31 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #78CCCB;
+    flex-direction: column;
+}
+
+#container {
+    display: flex;
+    width: 50%;
+    height: 700px;
+    flex-direction: column;
+    background-color: white;
+}
+
+.row {
+    display: flex;
+    flex-grow: 1;
+}
+
+.pixel {
+    flex-grow: 1;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.hov {
+    background-color: black;
+}
