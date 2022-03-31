@@ -1,6 +1,6 @@
 const container = document.querySelector('#container');
 let size = 16;
-let color = 'random';
+let color = 'black';
 createGrid(size);
 let pixels = document.querySelectorAll('.pixel');
 classicHover(pixels);
